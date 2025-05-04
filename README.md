@@ -11,6 +11,11 @@ Activate
 source venv/bin/activate
 ```
 
+Verify 
+```bash
+echo $VIRTUAL_ENV
+```
+
 ### Install dependencies 
 
 ```bash
@@ -18,7 +23,7 @@ pip install -r requirements.txt
 ```
 
 Freeze denpendencies 
-```
+```bash
 pip freeze > requirements.txt
 ```
 ---
@@ -29,8 +34,22 @@ pip freeze > requirements.txt
 uvicorn app.main:app --reload
 ```
 
+---
+
+## API 
+
+1. `GET /blogs/` → Get all blogs
+
+2. `GET /blogs/{blog_id}`  → Get blog by ID
+
+3. `POST /blogs/` → Create a new blog
 
 
+--
 
+## Test API 
 
+```bash
+pytest spec/
+```
 
