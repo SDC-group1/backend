@@ -64,10 +64,15 @@ python app/seed/seed_runner.py
 ```
 
 ```bash
-docker-compose run fastapi python app/seed_runner.py
+docker-compose run fastapi python app/seed/seed_runner.py
 ```
 
 ### 2. Check DB
+
+```bash
+sudo apt install sqlite3
+```
+
 ```bash
 sqlite3 database.db
 ```
