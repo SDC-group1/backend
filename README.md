@@ -68,11 +68,12 @@ docker-compose run fastapi python app/seed/seed_runner.py
 ```
 
 ### 2. Check DB
-
+if not yet installed 
 ```bash
 sudo apt install sqlite3
 ```
 
+should return fake data if seed_runner works
 ```bash
 sqlite3 database.db
 ```
@@ -82,8 +83,4 @@ SELECT * FROM users;
 SELECT * FROM posts;
 SELECT * FROM comments;
 SELECT * FROM user_settings;
-```
-### 3. Test 
-```bash
-python -m app.seed.seed_runner
 ```
