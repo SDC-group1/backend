@@ -54,7 +54,7 @@ uvicorn app.main:app --reload
 1. `GET  /settings`  → Get setting 
 2. `PUT  /settings`  → Update setting 
 
---
+---
 
 ## Test API 
 
