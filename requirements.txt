@@ -25,3 +25,4 @@ sqlalchemy==2.0.35
 passlib[bcrypt]==1.7.4 
 python-jwt==4.1.0 
 faker==30.8.2
+pydantic[email]==2.9.2
