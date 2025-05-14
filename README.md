@@ -60,7 +60,7 @@ uvicorn app.main:app --reload
 
 ### 1. Create fake data in development env
 ```bash
-python app/seed_runner.py
+python app/seed/seed_runner.py
 ```
 
 ```bash
@@ -77,4 +77,8 @@ SELECT * FROM users;
 SELECT * FROM posts;
 SELECT * FROM comments;
 SELECT * FROM user_settings;
+```
+### 3. Test 
+```bash
+python -m app.seed.seed_runner
 ```

@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 from faker import Faker
-from . import models, crud, schemas
+from .. import models, crud, schemas
 import random
 
 fake = Faker()
