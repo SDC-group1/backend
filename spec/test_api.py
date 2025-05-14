@@ -7,6 +7,7 @@ from fastapi.testclient import TestClient
 from app.main import app, fake_blogs_db
 
 
+
 client = TestClient(app)
 
 # Fixture to reset the fake_blogs_db before each test
