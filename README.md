@@ -39,32 +39,22 @@ uvicorn app.main:app --reload
 ## API 
 
 ### User
-1. `POST /users/register` → Register 
-2. `POST /users/login` → Login 
+1. `POST api/auth/login` → Login 
 
 ### Post
-1. `POST /posts` → Create all posts
-2. `GET  /posts` → Browse all posts
-3. `GET  /posts/search?keyword=example` → Search post by keyword 
-
-### Comment 
-1. `POST /comments/{post_id}`  → Create comment on certain post 
-
-### Setting 
-1. `GET  /settings`  → Get setting 
-2. `PUT  /settings`  → Update setting 
-
+1. `POST api/blog` → Create blog
+2. `GET  api/blogs` → Browse blogs
 ---
 
 ## Test API 
 
 ### 1. Create fake data in development env
 ```bash
-python app/seed/seed_runner.py
+python app.seed.seed_runner.py
 ```
 
 ```bash
-docker-compose run fastapi python app/seed/seed_runner.py
+docker-compose run fastapi python app.seed.seed_runner.py
 ```
 
 ### 2. Check DB
