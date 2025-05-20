@@ -28,6 +28,12 @@ oauth.register(
 @router.get("/login")
 async def login(request: Request, c: str = None):
     redirect_uri = request.url_for('auth_callback')
+    params = {
+        'scope': 'https://www.googleapis.com/auth/drive.metadata.readonly https://www.googleapis.com/auth/calendar.readonly',
+        'access_type': 'offline',
+        'include_granted_scopes': 'true',
+        'response_type': 'code'
+    }
     if c:
         state_str = urlencode({"c": c})
         return await oauth.google.authorize_redirect(
@@ -36,7 +42,7 @@ async def login(request: Request, c: str = None):
             state=state_str
         )
 
-    return await oauth.google.authorize_redirect(request, redirect_uri)
+    return await oauth.google.authorize_redirect(request, redirect_uri, **params)
 
 @router.get("/callback")
 async def auth_callback(request: Request, db: Session = Depends(database.get_db)):
